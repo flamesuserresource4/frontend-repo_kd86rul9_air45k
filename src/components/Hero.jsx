@@ -14,10 +14,10 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-[95vh] w-full overflow-hidden bg-black text-white">
-      {/* Spline robot scene (interactive head follows mouse) */}
+      {/* Spline humanoid robot scene (interactive head follows mouse) */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/OG17yM2eUIs8MUmA/scene.splinecode"
+          scene="https://prod.spline.design/M4yE7MTeWshitQbr/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
@@ -67,7 +67,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-6 max-w-2xl text-balance text-sm text-white/70 sm:text-lg"
         >
-          White-grey robot scene with neon accents that reacts to your cursor. Built with precision and flair.
+          Black-themed humanoid robot on a soft white-grey stage. Its head tracks your cursor for a modern, interactive feel.
         </motion.p>
 
         <motion.div
