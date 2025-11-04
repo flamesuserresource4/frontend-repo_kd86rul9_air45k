@@ -1,15 +1,19 @@
 import React from 'react';
 import Hero from './components/Hero';
+import CompanyProfile from './components/CompanyProfile';
 import Companies from './components/Companies';
-import About from './components/About';
+import Team from './components/Team';
+import Story from './components/Story';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="min-h-screen w-full bg-black font-sans text-white">
       <Hero />
+      <CompanyProfile />
       <Companies />
-      <About />
+      <Team />
+      <Story />
       <Footer />
     </div>
   );
