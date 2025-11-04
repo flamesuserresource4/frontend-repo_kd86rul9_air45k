@@ -8,22 +8,49 @@ export default function Hero() {
     const root = document.documentElement;
     const prev = root.style.scrollBehavior;
     root.style.scrollBehavior = 'smooth';
-    return () => { root.style.scrollBehavior = prev; };
+    return () => {
+      root.style.scrollBehavior = prev;
+    };
   }, []);
 
   return (
     <section className="relative min-h-[95vh] w-full overflow-hidden bg-black text-white">
-      {/* Spline full-width cover */}
+      {/* Spline full-width cover (laser/barcode sci‑fi theme) */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/IKzHtP5ThSO83edK/scene.splinecode"
+          scene="https://prod.spline.design/OeOth5wO0fkZcys3/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
 
-      {/* Non-blocking overlays for readability */}
+      {/* Readability gradients (non-blocking) */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/80" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
+
+      {/* Laser sweep overlay (adds a striking vertical blue light pass) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-[-30%] w-1/3"
+        initial={{ x: '-10%' }}
+        animate={{ x: '140%' }}
+        transition={{ duration: 5.5, repeat: Infinity, ease: 'linear' }}
+        style={{
+          background:
+            'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(56,189,248,0.05) 20%, rgba(59,130,246,0.22) 50%, rgba(56,189,248,0.05) 80%, rgba(0,0,0,0) 100%)',
+          filter: 'blur(2px)',
+          mixBlendMode: 'screen',
+        }}
+      />
+
+      {/* Subtle barcode lines to enhance depth without blocking interactions */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(90deg, rgba(59,130,246,0.06) 0px, rgba(59,130,246,0.06) 1px, rgba(0,0,0,0) 1px, rgba(0,0,0,0) 8px)',
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-32 text-center sm:py-44">
